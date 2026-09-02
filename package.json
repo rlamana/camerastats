@@ -1,0 +1,52 @@
+{
+  "name": "camerastats",
+  "version": "0.1.0",
+  "description": "Scan a folder of photos (JPEG, TIFF, HEIC and camera RAW) and report which focal lengths and apertures you actually shoot with.",
+  "keywords": [
+    "exif",
+    "raw",
+    "photography",
+    "cli",
+    "focal-length",
+    "aperture",
+    "statistics"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "camerastats": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
+    "dev": "npm run build --silent && node dist/cli.js",
+    "start": "node dist/cli.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "pretest": "npm run build",
+    "fixtures": "node scripts/make-fixtures.mjs",
+    "watch": "tsc -p tsconfig.json --watch"
+  },
+  "dependencies": {
+    "exifr": "^7.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

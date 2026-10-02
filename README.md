@@ -235,6 +235,23 @@ length and aperture. Note that a bare `exiftool -FocalLength` reports the
 *last* matching tag, which on Sony bodies is the MakerNote value rather than
 the EXIF one; compare against `exiftool -EXIF:FocalLength` instead.
 
+### Releasing a new version
+
+Publishing to npm is automated: pushing a `vX.Y.Z` tag runs
+[`.github/workflows/publish.yml`](.github/workflows/publish.yml), which
+builds, tests, publishes the package to npm, and creates a matching GitHub
+release.
+
+```sh
+npm version patch   # or minor / major — bumps package.json and tags the commit
+git push --follow-tags
+```
+
+This requires an `NPM_TOKEN` repository secret holding an npm
+[automation token](https://docs.npmjs.com/creating-and-viewing-access-tokens)
+with publish rights for the `camerastats` package
+(Settings → Secrets and variables → Actions).
+
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).

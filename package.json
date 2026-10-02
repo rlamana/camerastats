@@ -12,6 +12,15 @@
     "statistics"
   ],
   "license": "MIT",
+  "author": "Ramon Lamana",
+  "homepage": "https://github.com/rlamana/camerastats#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlamana/camerastats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rlamana/camerastats/issues"
+  },
   "type": "module",
   "bin": {
     "camerastats": "dist/cli.js"
@@ -26,7 +35,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "engines": {
     "node": ">=18"
